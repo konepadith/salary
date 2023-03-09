@@ -37,11 +37,11 @@ client.on('ready', () => {
         
         // client.sendMessage(phoneNumber,TextMessage)
         // client.sendMessage("85620"+element.tel+"@c.us",element.name+"\n"+element.salary.toLocaleString("en-US")+"\nສະບາຍດີ");
-        client.sendMessage(phoneNumber,"ຈາກພະແນກບຸກຄະລາກອນ ບໍລິສັດ ໂອເຊຍໂນ\nສະບາຍດີ "
+        client.sendMessage(phoneNumber,"ສະບາຍດີ "
          + element.FullNames + 
-         "ນີ້ແມ່ນເອກະສານໃບແຈ້ງຍອດລວມເງິນເດືອນປະຈຳເດືອນ "
+         "\n\nພວກເຮົາສົ່ງມາຈາກພະແນກບຸກຄະລາກອນ ບໍລິສັດ ໂອເຊຍໂນ ຈຳກັດ\n\nນີ້ແມ່ນເອກະສານໃບແຈ້ງຍອດລວມເງິນເດືອນປະຈຳເດືອນ "
          + moment(result1).format('MM') 
-         + "\nຖ້າມີຂໍ້ມູນໃດບໍ່ຖືກຕ້ອງ ກະລຸນາແຈ້ງຂໍ້ມູນປະໄວ້ ທາງຝ່າຍເຮົາຈະໃຫ້ຄຳຕອບໃນໄວໆນີ້\nຂໍຂອບໃຈ");
+         + "\n\nຖ້າມີຂໍ້ມູນໃດບໍ່ຖືກຕ້ອງ ກະລຸນາແຈ້ງຂໍ້ມູນປະໄວ້ກ່ອນ ແລ້ວທາງຝ່າຍເຮົາຈະໃຫ້ຄຳຕອບໃນໄວໆນີ້ \nໝາຍເຫດ: ກະລຸນາກວດເລກບັນຊີຂອງທ່ານໃນເອກະສານຕິດຂັດ ເພື່ອຫຼີກລ້ຽງການເກີດຂໍ້ຜິດພາດໃນການໂອນຈ່າຍ\nຂໍຂອບໃຈ");
         const attachmentPdf = MessageMedia.fromFilePath("salary/"+element.FullNames+".pdf");
         client.sendMessage(phoneNumber, attachmentPdf); 
         console.log(i+1+"."+phoneNumber)
