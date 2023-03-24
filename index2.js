@@ -58,9 +58,10 @@ client.on('ready', () => {
 //       }
 });
 app.post("/salary",upload.array('images'), async(req,res)=>{
- const info = JSON.parse(req.body.data);
- console.log(Object.keys(info).length)
+ 
  try {
+  const info = JSON.parse(req.body.data);
+ console.log(Object.keys(info).length)
   for (let i = 0; i < Object.keys(info).length; i++) {
     const element = info[i];
     // console.log(element.FullNames+".pdf")
