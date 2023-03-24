@@ -29,23 +29,23 @@ client.on('qr', qr => {
 
 client.on('ready', () => {
     console.log('Client is ready!');
-    for (let i = 0; i < Object.keys(data).length; i++) {
-        const element = data[i];
-        // console.log(element.FullNames+".pdf")
-        // console.log(element.CodesTel.substring(1)+"@c.us")
-        var phoneNumber=element.CodesTel.substring(1)+"@c.us"
+    // for (let i = 0; i < Object.keys(data).length; i++) {
+    //     const element = data[i];
+    //     // console.log(element.FullNames+".pdf")
+    //     // console.log(element.CodesTel.substring(1)+"@c.us")
+    //     var phoneNumber=element.CodesTel.substring(1)+"@c.us"
         
-        // client.sendMessage(phoneNumber,TextMessage)
-        // client.sendMessage("85620"+element.tel+"@c.us",element.name+"\n"+element.salary.toLocaleString("en-US")+"\nສະບາຍດີ");
-        client.sendMessage(phoneNumber,"ສະບາຍດີ "
-         + element.FullNames + 
-         "\n\nພວກເຮົາສົ່ງມາຈາກພະແນກບຸກຄະລາກອນ ບໍລິສັດ ໂອເຊຍໂນ ຈຳກັດ\n\nນີ້ແມ່ນເອກະສານໃບແຈ້ງຍອດລວມເງິນເດືອນປະຈຳເດືອນ "
-         + moment(result1).format('MM') 
-         + "\n\nຖ້າມີຂໍ້ມູນໃດບໍ່ຖືກຕ້ອງ ກະລຸນາແຈ້ງຂໍ້ມູນປະໄວ້ກ່ອນ ແລ້ວທາງຝ່າຍເຮົາຈະໃຫ້ຄຳຕອບໃນໄວໆນີ້ \nໝາຍເຫດ: ກະລຸນາກວດເລກບັນຊີຂອງທ່ານໃນເອກະສານຕິດຂັດ ເພື່ອຫຼີກລ້ຽງການເກີດຂໍ້ຜິດພາດໃນການໂອນຈ່າຍ\nຂໍຂອບໃຈ");
-        const attachmentPdf = MessageMedia.fromFilePath("salary/"+element.FullNames+".pdf");
-        client.sendMessage(phoneNumber, attachmentPdf); 
-        console.log(i+1+"."+phoneNumber)
-      }
+    //     // client.sendMessage(phoneNumber,TextMessage)
+    //     // client.sendMessage("85620"+element.tel+"@c.us",element.name+"\n"+element.salary.toLocaleString("en-US")+"\nສະບາຍດີ");
+    //     client.sendMessage(phoneNumber,"ສະບາຍດີ "
+    //      + element.FullNames + 
+    //      "\n\nພວກເຮົາສົ່ງມາຈາກພະແນກບຸກຄະລາກອນ ບໍລິສັດ ໂອເຊຍໂນ ຈຳກັດ\n\nນີ້ແມ່ນເອກະສານໃບແຈ້ງຍອດລວມເງິນເດືອນປະຈຳເດືອນ "
+    //      + moment(result1).format('MM') 
+    //      + "\n\nຖ້າມີຂໍ້ມູນໃດບໍ່ຖືກຕ້ອງ ກະລຸນາແຈ້ງຂໍ້ມູນປະໄວ້ກ່ອນ ແລ້ວທາງຝ່າຍເຮົາຈະໃຫ້ຄຳຕອບໃນໄວໆນີ້ \nໝາຍເຫດ: ກະລຸນາກວດເລກບັນຊີຂອງທ່ານໃນເອກະສານຕິດຂັດ ເພື່ອຫຼີກລ້ຽງການເກີດຂໍ້ຜິດພາດໃນການໂອນຈ່າຍ\nຂໍຂອບໃຈ");
+    //     const attachmentPdf = MessageMedia.fromFilePath("salary/"+element.FullNames+".pdf");
+    //     client.sendMessage(phoneNumber, attachmentPdf); 
+    //     console.log(i+1+"."+phoneNumber)
+    //   }
 });
 
 client.initialize();
