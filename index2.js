@@ -57,30 +57,24 @@ client.on('ready', () => {
 //         console.log(i+1+"."+phoneNumber)
 //       }
 });
-app.post("/salary",upload.array('images'), async(req,res)=>{
- 
- try {
+app.post("/salary",upload.array('images'),(req,res)=>{
   const info = JSON.parse(req.body.data);
- console.log(Object.keys(info).length)
+  console.log(Object.keys(info).length)
+  
   for (let i = 0; i < Object.keys(info).length; i++) {
     const element = info[i];
     // console.log(element.FullNames+".pdf")
     var phoneNumber=element.CodesTel.substring(1)+"@c.us"
-    
-    // client.sendMessage(phoneNumber,TextMessage)
-    // client.sendMessage("85620"+element.tel+"@c.us",element.name+"\n"+element.salary.toLocaleString("en-US")+"\nສະບາຍດີ");
-    // client.sendMessage(phoneNumber,"ສະບາຍດີ "
-    //  + element.FullNames + 
-    //  "\n\nພວກເຮົາສົ່ງມາຈາກພະແນກບຸກຄະລາກອນ ບໍລິສັດ ໂອເຊຍໂນ ຈຳກັດ\n\nນີ້ແມ່ນເອກະສານສັນຍາກ່ຽວກັບການຮັກສາຄວາມລັບ "
-    //  + "\n\nຖ້າມີຂໍ້ມູນໃດບໍ່ຖືກຕ້ອງ ກະລຸນາແຈ້ງຂໍ້ມູນປະໄວ້ກ່ອນ ແລ້ວທາງຝ່າຍເຮົາຈະໃຫ້ຄຳຕອບໃນໄວໆນີ້ \nໝາຍເຫດ: ຫຼັງຈາກເຊັນຊື່ສຳເລັດ ກະລຸນາສະແກຣນສົ່ງເອກະສານກັບມາ\n\nຂໍຂອບໃຈ");
-    // const attachmentPdf = MessageMedia.fromFilePath("salary/"+element.FullNames+".pdf");
-    // await client.sendMessage(phoneNumber, attachmentPdf); 
+  
+    client.sendMessage(phoneNumber,"ສະບາຍດີ "
+     + element.FullNames + 
+     "\n\nພວກເຮົາສົ່ງມາຈາກພະແນກບຸກຄະລາກອນ ບໍລິສັດ ໂອເຊຍໂນ ຈຳກັດ\n\nນີ້ແມ່ນເອກະສານສັນຍາກ່ຽວກັບການຮັກສາຄວາມລັບ "
+     + "\n\nຖ້າມີຂໍ້ມູນໃດບໍ່ຖືກຕ້ອງ ກະລຸນາແຈ້ງຂໍ້ມູນປະໄວ້ກ່ອນ ແລ້ວທາງຝ່າຍເຮົາຈະໃຫ້ຄຳຕອບໃນໄວໆນີ້ \nໝາຍເຫດ: ຫຼັງຈາກເຊັນຊື່ສຳເລັດ ກະລຸນາສະແກຣນສົ່ງເອກະສານກັບມາ\n\nຂໍຂອບໃຈ");
+    const attachmentPdf = MessageMedia.fromFilePath("salary/"+element.FullNames+".pdf");
+    client.sendMessage(phoneNumber, attachmentPdf); 
     console.log(i+1+"."+phoneNumber)
   }
   return res.send({ error : false, message:'Succesfully',status:1 });
- } catch (error) {
-  return res.send({ error : true, message:'wrong',status:0 });
- }
       
 })
 client.initialize();
